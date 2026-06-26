@@ -1,0 +1,90 @@
+@use '../../../../../../libs/ui/src/lib/styles/mixins' as m;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+
+  &__inner {
+    @include m.flex-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-24px);
+    height: 60px;
+    gap: var(--space-16px);
+  }
+
+  &__logo {
+    @include m.flex-row(var(--space-8px));
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  &__logo-icon {
+    @include m.flex-center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-8px);
+  }
+
+  &__logo-text {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.04em;
+  }
+
+  &__logo-auto {
+    color: var(--color-text-primary);
+  }
+  &__logo-drive {
+    color: var(--color-primary);
+  }
+
+  &__nav {
+    @include m.flex-center;
+    gap: var(--space-4px);
+    flex: 1;
+  }
+
+  &__nav-link {
+    padding: var(--space-8px) var(--space-12px);
+    border-radius: var(--radius-8px);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease;
+
+    &:hover {
+      color: var(--color-text-primary);
+    }
+
+    &--active {
+      background-color: var(--color-surface);
+      color: var(--color-text-primary);
+    }
+  }
+
+  &__actions {
+    @include m.flex-row(var(--space-16px));
+    flex-shrink: 0;
+  }
+
+  &__sign-in {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--color-text-muted);
+    }
+  }
+}

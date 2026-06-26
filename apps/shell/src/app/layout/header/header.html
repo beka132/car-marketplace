@@ -1,0 +1,52 @@
+<header class="header">
+  <div class="header__inner">
+    <!-- Logo -->
+    <a class="header__logo" routerLink="/listings">
+      <div class="header__logo-icon">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 11L6.5 6.5H17.5L19 11M5 11H19M5 11L3 13V17H5M19 11L21 13V17H19M5 17H19M5 17V15M19 17V15M7 15H9M15 15H17"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <span class="header__logo-text">
+        <span class="header__logo-auto">AUTO</span
+        ><span class="header__logo-drive">DRIVE</span>
+      </span>
+    </a>
+
+    <nav class="header__nav">
+      @for (link of navLinks; track link.label) {
+      <a
+        class="header__nav-link"
+        [routerLink]="link.route"
+        routerLinkActive="header__nav-link--active"
+        [routerLinkActiveOptions]="{ exact: link.exact }"
+      >
+        {{ link.label }}
+      </a>
+      }
+    </nav>
+
+    <div class="header__actions">
+      <a class="header__sign-in" routerLink="/auth">Sign In</a>
+      <cm-button
+        label="Get Started"
+        variant="primary"
+        size="md"
+        radius="pill"
+        (clicked)="null"
+      />
+    </div>
+  </div>
+</header>
