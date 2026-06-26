@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@use '../../../libs/ui/src/lib/styles/index' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  line-height: var(--line-height-normal);
+}

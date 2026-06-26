@@ -1,0 +1,27 @@
+:root {
+  --font-family-base:    'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-family-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  --font-size-11px:  11px;
+  --font-size-12px:  12px;
+  --font-size-14px:  14px;
+  --font-size-16px:  16px;
+  --font-size-18px:  18px;
+  --font-size-22px:  22px;
+  --font-size-28px:  28px;
+  --font-size-36px:  36px;
+
+  --font-size-xs:   var(--font-size-11px);
+  --font-size-sm:   var(--font-size-12px);
+  --font-size-md:   var(--font-size-14px);
+  --font-size-lg:   var(--font-size-16px);
+  --font-size-xl:   var(--font-size-18px);
+  --font-size-2xl:  var(--font-size-22px);
+  --font-size-3xl:  var(--font-size-28px);
+  --font-size-4xl:  var(--font-size-36px);
+
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+}

@@ -1,0 +1,34 @@
+:root {
+  --space-0px:    0px;
+  --space-4px:    4px;
+  --space-8px:    8px;
+  --space-12px:   12px;
+  --space-16px:   16px;
+  --space-20px:   20px;
+  --space-24px:   24px;
+  --space-32px:   32px;
+  --space-40px:   40px;
+  --space-48px:   48px;
+  --space-64px:   64px;
+
+  --space-xs:   var(--space-4px);
+  --space-sm:   var(--space-8px);
+  --space-md:   var(--space-16px);
+  --space-lg:   var(--space-24px);
+  --space-xl:   var(--space-32px);
+  --space-2xl:  var(--space-48px);
+
+  --radius-0px:    0px;
+  --radius-4px:    4px;
+  --radius-8px:    8px;
+  --radius-12px:   12px;
+  --radius-16px:   16px;
+  --radius-20px:   20px;
+  --radius-pill:   9999px;
+
+  --radius-none:  var(--radius-0px);
+  --radius-sm:    var(--radius-4px);
+  --radius-md:    var(--radius-8px);
+  --radius-lg:    var(--radius-16px);
+  --radius-xl:    var(--radius-20px);
+}

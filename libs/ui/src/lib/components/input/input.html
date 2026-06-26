@@ -1,0 +1,46 @@
+<div [class]="wrapperClass()">
+  @if (label()) {
+  <label class="cm-input__label" [attr.for]="inputId()">{{ label() }}</label>
+  }
+
+  <div class="cm-input__control">
+    @if (icon() && iconPosition() === 'left') {
+    <img [src]="icon()!" [class]="iconClass()" alt="" />
+    } @if (type() === 'textarea') {
+    <textarea
+      [class]="fieldClass()"
+      [id]="inputId()"
+      [placeholder]="placeholder()"
+      [disabled]="disabled()"
+      [rows]="rows()"
+      [value]="value()"
+      (input)="onInput($event)"
+    ></textarea>
+    } @else if (type() === 'select') {
+    <select
+      [class]="fieldClass()"
+      [id]="inputId()"
+      [disabled]="disabled()"
+      [value]="value()"
+      (change)="onInput($event)"
+    >
+      @for (opt of options(); track opt.value) {
+      <option [value]="opt.value">{{ opt.label }}</option>
+      }
+    </select>
+    <img [src]="chevronIcon()" class="cm-input__chevron" alt="" />
+    } @else {
+    <input
+      [class]="fieldClass()"
+      [id]="inputId()"
+      [type]="type()"
+      [placeholder]="placeholder()"
+      [disabled]="disabled()"
+      [value]="value()"
+      (input)="onInput($event)"
+    />
+    } @if (icon() && iconPosition() === 'right') {
+    <img [src]="icon()!" [class]="iconClass()" alt="" />
+    }
+  </div>
+</div>

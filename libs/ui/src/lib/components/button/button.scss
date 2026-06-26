@@ -2,8 +2,8 @@
   display: inline-block;
   border: none;
   cursor: pointer;
-  font-family: inherit;
-  font-weight: 500;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
   transition: opacity 0.2s ease, transform 0.1s ease;
 
   &:hover:not(:disabled) {
@@ -15,90 +15,81 @@
   }
 
   &--sm {
-    padding: 6px 12px;
-    font-size: 12px;
+    padding: var(--space-4px) var(--space-12px);
+    font-size: var(--font-size-sm);
   }
 
   &--md {
-    padding: 10px 20px;
-    font-size: 14px;
+    padding: var(--space-8px) var(--space-20px);
+    font-size: var(--font-size-md);
   }
 
   &--lg {
-    padding: 14px 28px;
-    font-size: 16px;
+    padding: var(--space-12px) var(--space-32px);
+    font-size: var(--font-size-lg);
   }
 
-  // --- Variant modifiers ---
   &--primary {
-    background-color: #e8102a;
-    color: #ffffff;
+    background-color: var(--color-primary);
+    color: var(--color-white);
   }
 
   &--secondary {
-    background-color: #6b7280;
-    color: #ffffff;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
   }
 
   &--danger {
-    background-color: #dc2626;
-    color: #ffffff;
+    background-color: var(--color-danger);
+    color: var(--color-white);
   }
 
   &--ghost {
-    background-color: transparent;
-    color: #e8102a;
+    background-color: var(--color-transparent);
+    color: var(--color-primary);
   }
 
   &--outline {
-    background-color: transparent;
-    color: #e8102a;
-    border: 2px solid #e8102a;
+    background-color: var(--color-transparent);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
   }
 
-  // --- Border radius modifiers ---
-  &--radius-none { border-radius: 0; }
-  &--radius-sm   { border-radius: 4px; }
-  &--radius-md   { border-radius: 8px; }
-  &--radius-lg   { border-radius: 16px; }
-  &--radius-pill { border-radius: 9999px; }
+  &--radius-none { border-radius: var(--radius-none); }
+  &--radius-sm   { border-radius: var(--radius-sm); }
+  &--radius-md   { border-radius: var(--radius-md); }
+  &--radius-lg   { border-radius: var(--radius-lg); }
+  &--radius-pill { border-radius: var(--radius-pill); }
 
-  // --- Layout modifiers ---
   &--full {
     display: block;
     width: 100%;
   }
 
-  // --- State modifiers ---
   &--disabled,
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
 
-  // --- Icon presence modifiers ---
   &--with-icon {
-    &.cm-btn--sm { padding: 6px 10px; }
-    &.cm-btn--md { padding: 10px 16px; }
-    &.cm-btn--lg { padding: 14px 22px; }
+    &.cm-btn--sm { padding: var(--space-4px) var(--space-8px); }
+    &.cm-btn--md { padding: var(--space-8px) var(--space-16px); }
+    &.cm-btn--lg { padding: var(--space-12px) var(--space-24px); }
   }
 
-  // --- Icon position modifiers ---
   &--icon-left  &__inner { flex-direction: row; }
   &--icon-right &__inner { flex-direction: row-reverse; }
 
-  // --- Elements ---
   &__inner {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    // Gap modifiers
-    &--gap-sm { gap: 4px; }
-    &--gap-md { gap: 8px; }
-    &--gap-lg { gap: 14px; }
+    &--gap-sm { gap: var(--space-4px); }
+    &--gap-md { gap: var(--space-8px); }
+    &--gap-lg { gap: var(--space-12px); }
 
-    // Icon direction modifiers
     &--icon-left  { flex-direction: row; }
     &--icon-right { flex-direction: row-reverse; }
   }
@@ -113,11 +104,9 @@
     display: block;
     flex-shrink: 0;
 
-    // Position modifiers
     &--left  { order: -1; }
     &--right { order: 1; }
 
-    // Size modifiers
     &--sm { width: 14px; height: 14px; }
     &--md { width: 18px; height: 18px; }
     &--lg { width: 22px; height: 22px; }
