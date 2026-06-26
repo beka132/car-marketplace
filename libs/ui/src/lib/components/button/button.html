@@ -1,0 +1,11 @@
+<button [class]="btnClass()" [disabled]="disabled()" (click)="onClick()">
+  <span [class]="innerClass()">
+    @if (icon() && iconPosition() === 'left') {
+      <img [src]="icon()!" [class]="iconClass()" alt="" />
+    }
+    <span class="cm-btn__label">{{ label() }}</span>
+    @if (icon() && iconPosition() === 'right') {
+      <img [src]="icon()!" [class]="iconClass()" alt="" />
+    }
+  </span>
+</button>

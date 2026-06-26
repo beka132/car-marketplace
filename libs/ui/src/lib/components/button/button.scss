@@ -1,0 +1,125 @@
+.cm-btn {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+
+  &:hover:not(:disabled) {
+    opacity: 0.88;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+
+  &--sm {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  &--md {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  &--lg {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+
+  // --- Variant modifiers ---
+  &--primary {
+    background-color: #e8102a;
+    color: #ffffff;
+  }
+
+  &--secondary {
+    background-color: #6b7280;
+    color: #ffffff;
+  }
+
+  &--danger {
+    background-color: #dc2626;
+    color: #ffffff;
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: #e8102a;
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: #e8102a;
+    border: 2px solid #e8102a;
+  }
+
+  // --- Border radius modifiers ---
+  &--radius-none { border-radius: 0; }
+  &--radius-sm   { border-radius: 4px; }
+  &--radius-md   { border-radius: 8px; }
+  &--radius-lg   { border-radius: 16px; }
+  &--radius-pill { border-radius: 9999px; }
+
+  // --- Layout modifiers ---
+  &--full {
+    display: block;
+    width: 100%;
+  }
+
+  // --- State modifiers ---
+  &--disabled,
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // --- Icon presence modifiers ---
+  &--with-icon {
+    &.cm-btn--sm { padding: 6px 10px; }
+    &.cm-btn--md { padding: 10px 16px; }
+    &.cm-btn--lg { padding: 14px 22px; }
+  }
+
+  // --- Icon position modifiers ---
+  &--icon-left  &__inner { flex-direction: row; }
+  &--icon-right &__inner { flex-direction: row-reverse; }
+
+  // --- Elements ---
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // Gap modifiers
+    &--gap-sm { gap: 4px; }
+    &--gap-md { gap: 8px; }
+    &--gap-lg { gap: 14px; }
+
+    // Icon direction modifiers
+    &--icon-left  { flex-direction: row; }
+    &--icon-right { flex-direction: row-reverse; }
+  }
+
+  &__label {
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  &__icon {
+    display: block;
+    flex-shrink: 0;
+
+    // Position modifiers
+    &--left  { order: -1; }
+    &--right { order: 1; }
+
+    // Size modifiers
+    &--sm { width: 14px; height: 14px; }
+    &--md { width: 18px; height: 18px; }
+    &--lg { width: 22px; height: 22px; }
+  }
+}
