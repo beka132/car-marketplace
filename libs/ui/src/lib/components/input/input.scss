@@ -125,6 +125,13 @@
     &--radius-pill {
       border-radius: var(--radius-pill);
     }
+
+    &--icon-left {
+      padding-left: 40px;
+    }
+    &--icon-right {
+      padding-right: 40px;
+    }
   }
 
   &--textarea &__field {

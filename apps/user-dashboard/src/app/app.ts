@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+import { Dashboard } from "./features/dashsboard/dashboard";
 
 @Component({
-  imports: [NxWelcome, RouterModule],
+  imports: [ RouterModule, Dashboard],
   selector: 'cm-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class App {
   protected title = 'user-dashboard';
