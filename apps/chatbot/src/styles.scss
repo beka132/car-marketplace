@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@use '../../../libs/ui/src/lib/styles/colors' as *;
+@use '../../../libs/ui/src/lib/styles/spacing' as *;
+@use '../../../libs/ui/src/lib/styles/fonts' as *;
+@use '../../../libs/ui/src/lib/styles/reset' as *;

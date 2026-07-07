@@ -55,7 +55,10 @@ export class Input {
       'cm-input__field',
       `cm-input__field--${this.size()}`,
       `cm-input__field--radius-${this.radius()}`,
-    ].join(' '),
+      this.icon() ? `cm-input__field--icon-${this.iconPosition()}` : '',
+    ]
+      .filter(Boolean)
+      .join(' '),
   );
 
   protected iconClass = computed(() =>
@@ -67,7 +70,9 @@ export class Input {
   );
 
   public onInput(event: Event): void {
-    const val = (event.target as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement).value;
+    const val = (
+      event.target as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    ).value;
     this.value.set(val);
   }
 }
