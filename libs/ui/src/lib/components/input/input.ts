@@ -10,6 +10,7 @@ import {
   InputSize,
   InputRadius,
   InputIconPosition,
+  InputVariant,
   SelectOption,
 } from './types/input.types';
 
@@ -21,6 +22,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Input {
+  public variant = input<InputVariant>('default');
   public type = input<InputType>('text');
   public placeholder = input<string>('');
   public label = input<string | null>(null);
@@ -42,6 +44,7 @@ export class Input {
       `cm-input--${this.size()}`,
       `cm-input--radius-${this.radius()}`,
       `cm-input--${this.type()}`,
+      `cm-input--${this.variant()}`,
       this.icon() ? 'cm-input--with-icon' : '',
       this.icon() ? `cm-input--icon-${this.iconPosition()}` : '',
       this.disabled() ? 'cm-input--disabled' : '',
@@ -56,6 +59,7 @@ export class Input {
       `cm-input__field--${this.size()}`,
       `cm-input__field--radius-${this.radius()}`,
       this.icon() ? `cm-input__field--icon-${this.iconPosition()}` : '',
+      this.variant() === 'ghost' ? 'cm-input__field--ghost' : '',
     ]
       .filter(Boolean)
       .join(' '),

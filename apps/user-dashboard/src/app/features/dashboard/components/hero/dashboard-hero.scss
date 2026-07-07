@@ -72,28 +72,10 @@
     align-items: center;
     flex: 1;
     min-width: 0;
+    width: 100%;
 
     cm-input {
       width: 100%;
-
-      .cm-input__control {
-        height: 44px;
-      }
-
-      .cm-input__field {
-        background: transparent;
-        border: none;
-        color: var(--color-white);
-
-        &::placeholder {
-          color: var(--color-text-placeholder);
-        }
-
-        &:focus {
-          border: none;
-          box-shadow: none;
-        }
-      }
     }
   }
 

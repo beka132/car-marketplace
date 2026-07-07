@@ -132,6 +132,20 @@
     &--icon-right {
       padding-right: 40px;
     }
+
+    &--ghost {
+      background: transparent;
+      border: none;
+      color: var(--color-white);
+
+      &::placeholder {
+        color: var(--color-text-placeholder);
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
   }
 
   &--textarea &__field {
