@@ -1,0 +1,77 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        Int     @id @default(autoincrement())
+  email     String  @unique
+  name      String
+  password  String
+  phone     String?
+  role      String  @default("user") // "user" | "admin"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  listings         CarListing[]
+  inquiries        CarInquiry[]     @relation("buyer")
+  messages         Message[]        @relation("sender")
+  receivedMessages Message[]        @relation("receiver")
+
+  @@map("users")
+}
+
+model CarListing {
+  id        Int     @id @default(autoincrement())
+  title     String
+  description String
+  price     Float
+  year      Int
+  make      String
+  model     String
+  mileage   Int
+  condition String  // new, like-new, excellent, good, fair, poor
+  images    String[] // array of image URLs
+  status    String  @default("active") // active, sold, archived
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId    Int
+  user      User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  inquiries CarInquiry[]
+
+  @@map("car_listings")
+}
+
+model CarInquiry {
+  id        Int     @id @default(autoincrement())
+  message   String
+  createdAt DateTime @default(now())
+
+  listingId Int
+  listing   CarListing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  buyerId   Int
+  buyer     User @relation("buyer", fields: [buyerId], references: [id], onDelete: Cascade)
+
+  @@map("car_inquiries")
+}
+
+model Message {
+  id        Int     @id @default(autoincrement())
+  text      String
+  createdAt DateTime @default(now())
+
+  senderId   Int
+  sender     User @relation("sender", fields: [senderId], references: [id], onDelete: Cascade)
+
+  receiverId Int
+  receiver   User @relation("receiver", fields: [receiverId], references: [id], onDelete: Cascade)
+
+  @@map("messages")
+}
