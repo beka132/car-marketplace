@@ -49,3 +49,8 @@ Thumbs.db
 __screenshots__/
 
 vitest.config.*.timestamp*
+# Environment variables — never commit secrets
+.env
+.env.*
+!.env.example
+.editconfig
