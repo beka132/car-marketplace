@@ -26,12 +26,13 @@
       <div class="hero__search-field">
         <cm-input
           class="hero__search-input-cmp"
-          type="text"
-          placeholder="Make, model, or keyword."
-          icon="assets/icons/search.svg"
-          iconPosition="left"
-          radius="none"
-          size="md"
+          [type]="'text'"
+          [placeholder]="'Make, model, or keyword.'"
+          [icon]="'assets/icons/search.svg'"
+          [iconPosition]="'left'"
+          [radius]="'none'"
+          [size]="'md'"
+          [variant]="'ghost'"
         />
       </div>
 
@@ -39,24 +40,24 @@
 
       <div class="hero__search-field">
         <cm-input
-          class="hero__search-input-cmp"
-          type="text"
-          placeholder="Location"
-          icon="assets/icons/location.svg"
-          iconPosition="left"
-          radius="none"
-          size="md"
+          [type]="'text'"
+          [placeholder]="'Location'"
+          [icon]="'assets/icons/location.svg'"
+          [iconPosition]="'left'"
+          [radius]="'none'"
+          [size]="'md'"
+          [variant]="'ghost'"
         />
       </div>
 
       <cm-button
-        label="Search"
-        variant="primary"
-        radius="pill"
-        size="md"
-        icon="assets/icons/search-white.svg"
-        iconPosition="left"
-        iconGap="sm"
+        [label]="'Search'"
+        [variant]="'primary'"
+        [radius]="'pill'"
+        [size]="'md'"
+        [icon]="'assets/icons/search-white.svg'"
+        [iconPosition]="'left'"
+        [iconGap]="'sm'"
       />
     </div>
 

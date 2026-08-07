@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Button, Input } from '@car-marketplace/ui';
 
 @Component({
@@ -7,6 +7,5 @@ import { Button, Input } from '@car-marketplace/ui';
   templateUrl: './dashboard-hero.html',
   styleUrl: './dashboard-hero.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
 })
 export class DashboardHero {}
