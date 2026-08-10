@@ -1,0 +1,76 @@
+.auth {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background-color: var(--color-background);
+
+  &__hero {
+    position: relative;
+    background-image: url('../../assets/auth.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-background) 84%, transparent) 0%,
+      color-mix(in srgb, var(--color-background) 46%, transparent) 36%,
+      color-mix(in srgb, var(--color-background) 16%, transparent) 62%,
+      color-mix(in srgb, var(--color-background) 6%, transparent) 100%
+    );
+  }
+
+  &__hero-content {
+    position: absolute;
+    left: clamp(1.5rem, 4vw, 3rem);
+    bottom: clamp(2rem, 6vh, 4rem);
+    z-index: 1;
+    color: var(--color-text-primary);
+  }
+
+  &__hero-tag {
+    display: inline-block;
+    margin: 0 0 1.1rem;
+    padding: 0.9rem 0.9rem;
+    border: 1px solid var(--color-primary-soft-border);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    background-color: var(--color-primary-soft-surface);
+    cursor: pointer;
+  }
+
+  &__hero-title {
+    margin: 0;
+    font-size: clamp(2rem, 2.4vw, 3.1rem);
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+  }
+
+  &__hero-description {
+    margin: 1rem 0 0;
+    font-size: clamp(1rem, 1.2vw, 1.32rem);
+    line-height: 1.5;
+    color: var(--color-text-muted);
+  }
+
+  &__login {
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+
+    &__hero {
+      min-height: 62vh;
+    }
+
+    &__login {
+      min-height: 38vh;
+    }
+  }
+}
