@@ -24,6 +24,7 @@ export class Button {
   public iconGap = input<ButtonGap>('md');
   public disabled = input<boolean>(false);
   public fullWidth = input<boolean>(false);
+  public type = input<'button' | 'submit' | 'reset'>('button');
 
   public clicked = output<void>();
 

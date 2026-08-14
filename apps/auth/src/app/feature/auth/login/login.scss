@@ -1,0 +1,32 @@
+.login {
+    &__model {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-lg);
+
+        a {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+            font-size: var(--font-size-md);
+            color: var(--color-primary);
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4px);
+    }
+
+    &__error {
+        font-size: var(--font-size-sm);
+        color: var(--color-error, #e53e3e);
+        padding-left: var(--space-4px);
+    }
+}

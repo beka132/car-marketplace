@@ -1,0 +1,49 @@
+<form class="login" (submit)="$event.preventDefault(); submitForm()">
+  <div class="login__model">
+    <div class="login__field">
+      <cm-input
+        [type]="'text'"
+        [placeholder]="'Enter username'"
+        [radius]="'md'"
+        [size]="'md'"
+        [variant]="'default'"
+        [label]="'Username'"
+        [borderColor]="username().touched() && username().errors().length ? '#e53e3e' : '#242426'"
+        [gap]="'8px'"
+        [value]="username().value()"
+        (valueChange)="username().value.set($event)"
+      />
+      @if (username().touched() && username().errors().length) {
+      <span class="login__error">{{ username().errors()[0].message }}</span>
+      }
+    </div>
+
+    <div class="login__field">
+      <cm-input
+        [type]="'password'"
+        [placeholder]="'••••••••'"
+        [radius]="'md'"
+        [size]="'md'"
+        [variant]="'default'"
+        [label]="'Password'"
+        [borderColor]="password().touched() && password().errors().length ? '#e53e3e' : '#242426'"
+        [gap]="'8px'"
+        [autocomplete]="'new-password'"
+        [value]="password().value()"
+        (valueChange)="password().value.set($event)"
+      />
+      @if (password().touched() && password().errors().length) {
+      <span class="login__error">{{ password().errors()[0].message }}</span>
+      }
+    </div>
+
+    <a>Forgot Password?</a>
+
+    <cm-button
+      [label]="'Sign In'"
+      [size]="'lgX'"
+      [fullWidth]="true"
+      type="submit"
+    />
+  </div>
+</form>

@@ -35,6 +35,9 @@ export class Input {
   public disabled = input<boolean>(false);
   public options = input<SelectOption[]>([]);
   public rows = input<number>(4);
+  public borderColor = input<string | null>(null);
+  public gap = input<string | null>(null);
+  public autocomplete = input<string>('off');
 
   public value = model<string>('');
 

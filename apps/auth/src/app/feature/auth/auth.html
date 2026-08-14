@@ -12,5 +12,45 @@
       </p>
     </div>
   </section>
-  <section class="auth__login"></section>
+  <section class="auth__mode">
+    <h2 class="auth__title">{{ title() }}</h2>
+    <p class="auth__subtitle">{{ subtitle() }}</p>
+
+    <div class="auth__tabs">
+      <button
+        type="button"
+        class="auth__tab"
+        [class.auth__tab--active]="authMode() === 'login'"
+        (click)="setMode('login')"
+      >
+        Sign In
+      </button>
+      <button
+        type="button"
+        class="auth__tab"
+        [class.auth__tab--active]="authMode() === 'register'"
+        (click)="setMode('register')"
+      >
+        Register
+      </button>
+    </div>
+
+    @if(authMode() === 'login') {
+      <cm-login></cm-login>
+    }
+
+    <div class="auth__divider">
+      <span>or continue with</span>
+    </div>
+
+    <div class="auth__socials">
+      <cm-button [label]="'Google'" [variant]="'outline'" [fullWidth]="true" />
+      <cm-button [label]="'Apple'" [variant]="'outline'" [fullWidth]="true" />
+    </div>
+
+    <p class="auth__switch">
+      {{ switchPrompt() }}
+      <button type="button" class="auth__switch-link" (click)="toggleMode()">{{ switchLabel() }}</button>
+    </p>
+  </section>
 </div>

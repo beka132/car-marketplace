@@ -14,9 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "paths": {
-      "@car-marketplace/ui": ["./libs/ui/src/index.ts"],
-      "@car-marketplace/auth-state": ["./libs/auth-state/src/index.ts"],
-      "@car-marketplace/shared-utils": ["./libs/shared-utils/src/index.ts"]
+      "@car-marketplace/ui": ["./libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

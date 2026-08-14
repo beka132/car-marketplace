@@ -1,4 +1,4 @@
-<button [class]="btnClass()" [disabled]="disabled()" (click)="onClick()">
+<button [class]="btnClass()" [disabled]="disabled()" [attr.type]="type()" (click)="onClick()">
   <span [class]="innerClass()">
     @if (icon() && iconPosition() === 'left') {
       <img [src]="icon()!" [class]="iconClass()" alt="" />

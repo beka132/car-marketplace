@@ -1,4 +1,4 @@
-export type ButtonSize = 'sm' | 'md' | 'lg';
+export type ButtonSize = 'sm' | 'md' | 'lg' | 'lgX';
 export type IconPosition = 'left' | 'right';
 export type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'ghost' | 'outline';
 export type ButtonRadius = 'none' | 'sm' | 'md' | 'lg' | 'pill';

@@ -1,4 +1,4 @@
-<div [class]="wrapperClass()">
+<div [class]="wrapperClass()" [style.gap]="gap()">
   @if (label()) {
   <label class="cm-input__label" [attr.for]="inputId()">{{ label() }}</label>
   }
@@ -14,6 +14,7 @@
       [disabled]="disabled()"
       [rows]="rows()"
       [value]="value()"
+      [style.border]="borderColor() ? '1.5px solid ' + borderColor() : null"
       (input)="onInput($event)"
     ></textarea>
     } @else if (type() === 'select') {
@@ -22,6 +23,7 @@
       [id]="inputId()"
       [disabled]="disabled()"
       [value]="value()"
+      [style.border]="borderColor() ? '1.5px solid ' + borderColor() : null"
       (change)="onInput($event)"
     >
       @for (opt of options(); track opt.value) {
@@ -37,6 +39,8 @@
       [placeholder]="placeholder()"
       [disabled]="disabled()"
       [value]="value()"
+      [attr.autocomplete]="autocomplete()"
+      [style.border]="borderColor() ? '1.5px solid ' + borderColor() : null"
       (input)="onInput($event)"
     />
     } @if (icon() && iconPosition() === 'right') {
